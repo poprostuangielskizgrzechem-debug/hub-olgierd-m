@@ -2001,6 +2001,43 @@ video {
       .hub-gram-items li { background:var(--hub-paper); border-radius:8px; padding:7px 11px;
                            font-size:14.5px; color:var(--hub-ink); }
 
+      /* --- notatka graficzna (g.sections) --- */
+      .hub-gsections { display:flex; flex-direction:column; gap:12px; margin-top:14px; }
+      .hub-gcard { --t:var(--hub-blue); --tb:var(--hub-tint); border:1px solid var(--hub-line); border-left:5px solid var(--t);
+                   border-radius:12px; padding:14px 16px; background:#fff; }
+      .tone-red   { --t:var(--hub-accent); --tb:#fdecee; }
+      .tone-green { --t:#1f8a4c; --tb:#e8f5ee; }
+      .tone-gold  { --t:#b7791f; --tb:#fdf6e3; }
+      .hub-gcard-title { font-family:'Plus Jakarta Sans', Arial, sans-serif; font-size:16px; font-weight:800;
+                         color:var(--t); margin:0 0 8px; display:flex; gap:8px; align-items:baseline; }
+      .hub-gcard-emoji { font-size:19px; line-height:1; }
+      .hub-gcard-points { margin:0; padding-left:20px; font-size:15px; line-height:1.6; color:var(--hub-ink); }
+      .hub-gcard-points li + li { margin-top:4px; }
+      .hub-gcard-ex { background:var(--tb); border-radius:10px; padding:10px 13px; margin-top:10px; }
+      .hub-gcard-ex-label { font-family:'Plus Jakarta Sans', Arial, sans-serif; font-size:10.5px; font-weight:700;
+                            text-transform:uppercase; letter-spacing:.8px; color:var(--t); margin:0 0 4px; }
+      .hub-gcard-ex-line { font-size:15px; line-height:1.55; color:var(--hub-ink); margin:0; }
+      .hub-gcard-ex-line + .hub-gcard-ex-line { margin-top:5px; }
+      .hub-hl { color:var(--t); font-weight:800; }
+      .hub-gtable-wrap { overflow-x:auto; }
+      .hub-gtable { width:100%; border-collapse:collapse; font-size:14.5px; line-height:1.5; }
+      .hub-gtable th { font-family:'Plus Jakarta Sans', Arial, sans-serif; font-weight:800; text-align:left;
+                       background:var(--tb); color:var(--hub-ink); padding:8px 10px; }
+      .hub-gtable td { padding:8px 10px; border-top:1px solid var(--hub-line); vertical-align:top; color:var(--hub-ink); }
+      .hub-gtable td + td, .hub-gtable th + th { border-left:1px solid var(--hub-line); }
+      .hub-gtip { --t:var(--hub-blue); --tb:var(--hub-tint); display:flex; gap:12px; align-items:flex-start;
+                  background:var(--tb); border-radius:12px; padding:13px 16px; }
+      .hub-gtip-emoji { font-size:22px; line-height:1.2; flex-shrink:0; }
+      .hub-gtip-title { font-family:'Plus Jakarta Sans', Arial, sans-serif; font-size:15px; font-weight:800; color:var(--t); margin:0 0 3px; }
+      .hub-gtip-text { font-size:15px; line-height:1.6; color:var(--hub-ink); margin:0; white-space:pre-line; }
+      @media (max-width:520px) {
+        .hub-gram:has(.hub-gsections) { padding:14px 10px; }
+        .hub-gcard { padding:12px 11px; }
+        .hub-gtip { padding:12px 11px; gap:9px; }
+        .hub-gtable { font-size:13.5px; }
+        .hub-gtable th, .hub-gtable td { padding:7px 6px; }
+      }
+
       /* --- kafelki linkow --- */
       .hub-links { display:flex; flex-direction:column; gap:8px; margin-top:14px; }
       .hub-link-tile { display:flex; align-items:center; gap:12px; text-decoration:none;
@@ -2517,7 +2554,7 @@ video {
             .hub-ex-text { margin: 0 0 12px; line-height: 2.3; font-size: 15.5px; }
             .hub-ex-num { font-weight: 700; margin-right: 6px; }
             .hub-ex-gapnum { font-weight: 700; margin: 0 3px 0 2px; }
-            .hub-ex-input { border: none; border-bottom: 2px solid #94a3b8; background: transparent; font: inherit; text-align: center; padding: 0 4px; outline: none; }
+            .hub-ex-input { border: none; border-bottom: 2px solid #94a3b8; background: transparent; font: inherit; text-align: center; padding: 0 4px; outline: none; max-width: 100%; }
             .hub-ex-input:focus { border-bottom-color: #2563eb; }
             .hub-ex-input.is-ok { border-bottom-color: #16a34a; color: #15803d; }
             .hub-ex-input.is-bad { border-bottom-color: #dc2626; color: #b91c1c; }
@@ -2534,6 +2571,14 @@ video {
             .hub-ex-opt.is-ok { border-color: #16a34a; background: #f0fdf4; color: #15803d; }
             .hub-ex-opt.is-bad { border-color: #dc2626; background: #fef2f2; color: #b91c1c; text-decoration: line-through; }
             .hub-ex-opt.is-key { border-color: #16a34a; border-style: dashed; }
+            .hub-ex-table-wrap { overflow-x: auto; margin: 0 0 12px; }
+            .hub-ex-table { width: 100%; border-collapse: collapse; }
+            .hub-ex-table th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--hub-muted); padding: 4px 6px 8px; }
+            .hub-ex-table td { padding: 8px 6px; border-top: 1px solid var(--hub-line); vertical-align: middle; }
+            .hub-ex-table td.hub-ex-num { width: 1%; white-space: nowrap; }
+            .hub-ex-table .hub-ex-input { width: 100%; min-width: 90px; text-align: left; }
+            .hub-ex-img { width: 1%; }
+            .hub-ex-img svg { display: block; height: 40px; width: auto; max-width: 64px; box-shadow: 0 0 0 1px #cbd5e1; }
             .hub-ex-saved { font-size: 12.5px; color: var(--hub-muted); margin: 0 0 14px; }
         </style>
         <section id="hub-exercises-view" class="hidden no-print flex-grow flex items-start justify-center relative z-20">
@@ -2552,6 +2597,7 @@ video {
 
                     <div class="hub-share hidden" id="hub-ex-share-panel">
                         <div class="hub-share-actions">
+                            <button type="button" class="hub-cta hub-cta-alt hidden" id="hub-ex-share-native">&#128228; Udost&#281;pnij</button>
                             <a class="hub-cta hub-cta-wa" id="hub-ex-share-wa" href="#" target="_blank" rel="noopener">&#128172; Wy&#347;lij wyniki na WhatsApp</a>
                             <button type="button" class="hub-cta hub-cta-alt" id="hub-ex-share-copy">&#128203; Kopiuj wyniki</button>
                         </div>
@@ -2900,6 +2946,48 @@ video {
                                     "definition": "a question about someone's physical appearance",
                                     "pos": "sent"
                         }
+            ],
+            "Lekcja 3 (26.09)": [
+                        {
+                                    "word": "seldom",
+                                    "translation": "rzadko / rzadko kiedy",
+                                    "definition": "not often; almost never",
+                                    "pos": "adv",
+                                    "sentenceWithGap": "My grandparents live far away, so we [gap] visit them, maybe once or twice a year.",
+                                    "firstLetterHint": "s"
+                        },
+                        {
+                                    "word": "plant",
+                                    "translation": "sadzić",
+                                    "definition": "to put a seed or a young plant in the ground so that it can grow",
+                                    "pos": "v",
+                                    "sentenceWithGap": "Every spring, we dig small holes in the garden and [gap] flowers in them.",
+                                    "firstLetterHint": "p"
+                        },
+                        {
+                                    "word": "admire",
+                                    "translation": "podziwiać",
+                                    "definition": "to respect and like someone because of what they do",
+                                    "pos": "v",
+                                    "sentenceWithGap": "I really [gap] my mum. She works hard and never gives up.",
+                                    "firstLetterHint": "a"
+                        },
+                        {
+                                    "word": "bring up",
+                                    "translation": "poruszyć (temat)",
+                                    "definition": "to start talking about a subject",
+                                    "pos": "v",
+                                    "sentenceWithGap": "Please don't [gap] politics at dinner. It always ends in an argument.",
+                                    "firstLetterHint": "b"
+                        },
+                        {
+                                    "word": "appropriate",
+                                    "translation": "odpowiedni / stosowny",
+                                    "definition": "suitable for a situation",
+                                    "pos": "adj",
+                                    "sentenceWithGap": "Jeans and a T-shirt are not [gap] clothes for a job interview.",
+                                    "firstLetterHint": "a"
+                        }
             ]
 };
 
@@ -2912,8 +3000,8 @@ video {
         "teacherWhatsApp": "",
         "storageKey": "hub_olgierd-m_2026-09",
         "studentKey": "hub_olgierd-m",
-        "stamp": "aktualizacja po lekcji 2, 19.09.2026",
-        "lastLessonPhrase": "lekcji 2",
+        "stamp": "aktualizacja po lekcji 3, 27.09.2026",
+        "lastLessonPhrase": "lekcji 3",
         "lessons": [
                 {
                         "label": "Lekcja 1",
@@ -2928,6 +3016,13 @@ video {
                         "categoryKey": "Lekcja 2 (19.09)",
                         "vocabCount": 6,
                         "topic": "Omówienie Present Perfect. Workbook: Focus 2 Unit 1.1"
+                },
+                {
+                        "label": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "categoryKey": "Lekcja 3 (26.09)",
+                        "vocabCount": 5,
+                        "topic": "Focus 2 Unit 1.2: czasy teraźniejsze (Present Simple, Present Continuous, Present Perfect) i zadawanie pytań, w tym pytania o podmiot i o dopełnienie."
                 }
         ],
         "grammar": [
@@ -2939,6 +3034,7 @@ video {
                         "correction": "",
                         "items": [],
                         "explanation": "Materiał wideo o tworzeniu nowych słów za pomocą przedrostków i przyrostków.",
+                        "sections": [],
                         "links": [
                                 {
                                         "label": "ROZSZYFRUJ angielskie słowa. Magia PREFIKSÓW I SUFIKSÓW | ROCK YOUR ENGLISH odc. 268",
@@ -2956,6 +3052,7 @@ video {
                         "correction": "I have always wanted to be a police officer",
                         "items": [],
                         "explanation": "Present Perfect (have + III forma) opisuje stan trwający od przeszłości do teraz - \"zawsze chciałem\" jako coś nieprzerwanego, nie jednorazowe zdarzenie w przeszłości.",
+                        "sections": [],
                         "links": [
                                 {
                                         "label": "Present Perfect i Simple Past - ćwiczenia online - Szlifuj swój angielski",
@@ -2964,6 +3061,261 @@ video {
                                         "questions": []
                                 }
                         ]
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "topic": "Present Simple, Present Continuous i Present Perfect",
+                        "mistake": "",
+                        "correction": "",
+                        "items": [],
+                        "explanation": "Trzy czasy, trzy pytania: robisz to regularnie? Dzieje się to teraz? Zaczęło się wcześniej i ma związek z teraz? Odpowiedź od razu mówi, którego czasu użyć.",
+                        "sections": [
+                                {
+                                        "type": "card",
+                                        "tone": "blue",
+                                        "emoji": "🔁",
+                                        "title": "Present Simple: I play / she plays",
+                                        "points": [
+                                                "Nawyki, rutyna, rzeczy stałe i fakty.",
+                                                "he / she / it: czasownik dostaje **-s** albo **-es**.",
+                                                "Pytania i przeczenia z **do / does**. Po does czasownik wraca do formy podstawowej: Does she **play**? (nie: plays)",
+                                                "Słowa-podpowiedzi: **always, usually, often, sometimes, seldom, never, every day, once a week, how often**"
+                                        ],
+                                        "examples": [
+                                                "My dad **works** in a bank.",
+                                                "I **seldom eat** fast food.",
+                                                "**Does** she **like** pizza? No, she **doesn't**.",
+                                                "Water **boils** at 100 degrees."
+                                        ]
+                                },
+                                {
+                                        "type": "card",
+                                        "tone": "red",
+                                        "emoji": "⏳",
+                                        "title": "Present Continuous: am / is / are + -ing",
+                                        "points": [
+                                                "Coś dzieje się **teraz**, w tej chwili.",
+                                                "Sytuacje tymczasowe: this week, these days.",
+                                                "Ustalone **plany** na najbliższą przyszłość: tomorrow, next Monday.",
+                                                "Bez **am / is / are** ten czas nie istnieje. Samo -ing to za mało.",
+                                                "Czasowniki statyczne (know, like, love, want, need, understand) nie mają -ing.",
+                                                "Słowa-podpowiedzi: **now, right now, at the moment, Look!, Listen!, today, these days**"
+                                        ],
+                                        "examples": [
+                                                "I**'m doing** my homework right now.",
+                                                "Listen! Someone **is knocking** at the door.",
+                                                "We**'re visiting** my aunt tomorrow.",
+                                                "What **are** you **doing**?"
+                                        ]
+                                },
+                                {
+                                        "type": "card",
+                                        "tone": "green",
+                                        "emoji": "🔗",
+                                        "title": "Present Perfect: have / has + III forma",
+                                        "points": [
+                                                "Przeszłość połączona z teraz: coś się stało i **efekt widać teraz**.",
+                                                "Doświadczenia z życia: **ever, never**.",
+                                                "Stan, który **trwa od jakiegoś czasu do teraz**: **for, since, how long**.",
+                                                "Słowa-podpowiedzi: **just, already, yet, ever, never, so far, for, since, how long**"
+                                        ],
+                                        "examples": [
+                                                "I**'ve just finished** my homework.",
+                                                "**Have** you ever **been** to Italy?",
+                                                "She **hasn't called** me **yet**.",
+                                                "We**'ve known** each other **since** primary school."
+                                        ]
+                                },
+                                {
+                                        "type": "table",
+                                        "tone": "gold",
+                                        "emoji": "🥊",
+                                        "title": "Trzy czasy obok siebie",
+                                        "head": [
+                                                "🔁 Present Simple",
+                                                "⏳ Present Continuous",
+                                                "🔗 Present Perfect"
+                                        ],
+                                        "rows": [
+                                                [
+                                                        "regularnie, zawsze, fakty",
+                                                        "teraz, tymczasowo, plany",
+                                                        "od przeszłości do teraz, efekt teraz"
+                                                ],
+                                                [
+                                                        "I **play** / she **plays**",
+                                                        "I **am playing** / she **is playing**",
+                                                        "I **have played** / she **has played**"
+                                                ],
+                                                [
+                                                        "always, usually, every day",
+                                                        "now, at the moment, Look!",
+                                                        "just, already, yet, ever, for, since"
+                                                ],
+                                                [
+                                                        "I **read** a lot.",
+                                                        "I**'m reading** a good book now.",
+                                                        "I**'ve read** this book three times."
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "type": "tip",
+                                        "tone": "blue",
+                                        "emoji": "💡",
+                                        "title": "Jedna czynność, trzy czasy",
+                                        "text": "I **play** tennis every Saturday. (zwyczaj)\nI**'m playing** tennis now. (w tej chwili)\nI**'ve played** tennis for five years. (od 5 lat do dziś)"
+                                }
+                        ],
+                        "links": []
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "topic": "",
+                        "mistake": "She play football every Saturday.",
+                        "correction": "She plays football every Saturday.",
+                        "items": [],
+                        "explanation": "Present Simple, he / she / it: czasownik dostaje -s. To najczęstszy błąd w tym czasie.",
+                        "sections": [],
+                        "links": []
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "topic": "",
+                        "mistake": "My brother watch TV and go to the gym every evening.",
+                        "correction": "My brother watches TV and goes to the gym every evening.",
+                        "items": [],
+                        "explanation": "Po -ch, -sh, -s, -x i -o dodajesz -es: watches, washes, goes, does. Spółgłoska + y zmienia się na -ies: study → studies.",
+                        "sections": [],
+                        "links": []
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "topic": "",
+                        "mistake": "I playing computer games now.",
+                        "correction": "I am playing computer games now.",
+                        "items": [],
+                        "explanation": "Present Continuous zawsze potrzebuje am / is / are. Samo -ing to za mało.",
+                        "sections": [],
+                        "links": []
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "topic": "",
+                        "mistake": "I know Kuba since primary school.",
+                        "correction": "I have known Kuba since primary school.",
+                        "items": [],
+                        "explanation": "Po polsku mówisz „znam go od…” w czasie teraźniejszym. Po angielsku, gdy coś trwa od jakiegoś momentu do teraz, używasz Present Perfect.",
+                        "sections": [],
+                        "links": []
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "topic": "",
+                        "mistake": "How long do you have your dog?",
+                        "correction": "How long have you had your dog?",
+                        "items": [],
+                        "explanation": "„How long…?” o czymś, co trwa do teraz, to Present Perfect.",
+                        "sections": [],
+                        "links": []
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "topic": "Pytania o podmiot i pytania o dopełnienie",
+                        "mistake": "",
+                        "correction": "",
+                        "items": [],
+                        "explanation": "Who i What mogą pytać o dwie różne rzeczy: kto coś robi albo kogo / co ktoś robi. Od tego zależy, czy w pytaniu pojawia się do / does.",
+                        "sections": [
+                                {
+                                        "type": "card",
+                                        "tone": "blue",
+                                        "emoji": "🙋",
+                                        "title": "Pytanie o podmiot: KTO / CO to robi?",
+                                        "points": [
+                                                "Odpowiedzią jest **podmiot**, czyli ten, kto wykonuje czynność.",
+                                                "Who / What zajmuje miejsce podmiotu, więc szyk zostaje jak w zdaniu: **bez do / does**.",
+                                                "W Present Simple czasownik ma **-s**, bo Who / What traktujesz jak he / she / it."
+                                        ],
+                                        "examples": [
+                                                "**Tom** loves pizza. → **Who loves** pizza?",
+                                                "**My mum** is making dinner. → **Who is making** dinner?",
+                                                "**Something** is burning! → **What is burning**?"
+                                        ]
+                                },
+                                {
+                                        "type": "card",
+                                        "tone": "red",
+                                        "emoji": "🎯",
+                                        "title": "Pytanie o dopełnienie: KOGO / CO?",
+                                        "points": [
+                                                "Odpowiedzią jest **dopełnienie**, czyli to, na co skierowana jest czynność.",
+                                                "Zwykły szyk pytania: Wh- + **do / does** albo **is / are / has / have** + podmiot + czasownik."
+                                        ],
+                                        "examples": [
+                                                "Tom loves **pizza**. → What **does** Tom **love**?",
+                                                "My mum is making **pancakes**. → What **is** your mum **making**?",
+                                                "Kasia has invited **Bartek**. → Who **has** Kasia **invited**?"
+                                        ]
+                                },
+                                {
+                                        "type": "table",
+                                        "tone": "gold",
+                                        "emoji": "🔍",
+                                        "title": "Jedno zdanie, dwa pytania",
+                                        "head": [
+                                                "Zdanie",
+                                                "O podmiot",
+                                                "O dopełnienie"
+                                        ],
+                                        "rows": [
+                                                [
+                                                        "**Ania** likes **Kuba**.",
+                                                        "**Who likes** Kuba? → Ania",
+                                                        "**Who does** Ania **like**? → Kuba"
+                                                ],
+                                                [
+                                                        "**The dog** is chasing **the cat**.",
+                                                        "**What is chasing** the cat? → The dog",
+                                                        "**What is** the dog **chasing**? → The cat"
+                                                ],
+                                                [
+                                                        "**Bartek** has broken **the window**.",
+                                                        "**Who has broken** the window? → Bartek",
+                                                        "**What has** Bartek **broken**? → The window"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "type": "tip",
+                                        "tone": "gold",
+                                        "emoji": "💘",
+                                        "title": "Jedno „does” zmienia sens",
+                                        "text": "**Who loves Kuba?** = Kto kocha Kubę?\n**Who does Kuba love?** = Kogo kocha Kuba?"
+                                },
+                                {
+                                        "type": "tip",
+                                        "tone": "red",
+                                        "emoji": "🚫",
+                                        "title": "Najczęstszy błąd",
+                                        "text": "❌ Who does play the guitar in your family?\n✅ Who **plays** the guitar in your family?"
+                                },
+                                {
+                                        "type": "tip",
+                                        "tone": "blue",
+                                        "emoji": "💡",
+                                        "title": "Szybki test w głowie",
+                                        "text": "Pytasz o tego, kto **coś robi**? Bez do / does.\nPytasz o to, **co albo kogo** ktoś robi? Dodaj do / does (albo is / has przed podmiotem)."
+                                }
+                        ],
+                        "links": []
                 }
         ],
         "homework": [],
@@ -3010,10 +3362,747 @@ video {
                         "word": "miserable",
                         "translation": "ponury",
                         "note": ""
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "word": "theatre",
+                        "translation": "teatr",
+                        "note": ""
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "word": "admire",
+                        "translation": "podziwiać",
+                        "note": ""
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "word": "appropriate",
+                        "translation": "odpowiedni / stosowny",
+                        "note": ""
                 }
         ],
         "writingSpeaking": [],
-        "exercises": [],
+        "exercises": [
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "title": "1. Present Simple, Present Continuous czy Present Perfect?",
+                        "instructions": "Wpisz czasownik z nawiasu w poprawnej formie. Użyj Present Simple, Present Continuous albo Present Perfect.",
+                        "layout": "list",
+                        "columns": [],
+                        "wordBox": [],
+                        "letters": false,
+                        "items": [
+                                {
+                                        "text": "Simon [gap] (play) volleyball with his friends in the park right now.",
+                                        "answers": [
+                                                [
+                                                        "is playing"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "We [gap] (seldom / go) to the theatre.",
+                                        "answers": [
+                                                [
+                                                        "seldom go"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "[gap] (Adam / sometimes / watch) romantic comedies?",
+                                        "answers": [
+                                                [
+                                                        "Does Adam sometimes watch"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "My grandma [gap] (just / bake) cheesecake. Would you like some?",
+                                        "answers": [
+                                                [
+                                                        "has just baked"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "[gap] (you / wash) the dishes yet?",
+                                        "answers": [
+                                                [
+                                                        "Have you washed"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "What [gap] (you / cook) in the kitchen now?",
+                                        "answers": [
+                                                [
+                                                        "are you cooking"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Jessica and Luke [gap] (argue) at the moment. I can hear them.",
+                                        "answers": [
+                                                [
+                                                        "are arguing"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "How often [gap] (Olivia / take) her dog for a walk?",
+                                        "answers": [
+                                                [
+                                                        "does Olivia take"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "I [gap] (run) ten kilometres and I'm exhausted.",
+                                        "answers": [
+                                                [
+                                                        "have run",
+                                                        "'ve run"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "What kind of job [gap] (Mark / look for)?",
+                                        "answers": [
+                                                [
+                                                        "is Mark looking for"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Chris [gap] (sleep) on the sofa in the living room. Please be quiet and don't wake him up.",
+                                        "answers": [
+                                                [
+                                                        "is sleeping"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "[gap] (you / ever / fall) in love?",
+                                        "answers": [
+                                                [
+                                                        "Have you ever fallen"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "What [gap] (your brother / do)? What's his occupation?",
+                                        "answers": [
+                                                [
+                                                        "does your brother do"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "My little sister [gap] (draw) something on the wall in the living room.",
+                                        "answers": [
+                                                [
+                                                        "is drawing",
+                                                        "has drawn"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "We should go home because it [gap] (get) dark.",
+                                        "answers": [
+                                                [
+                                                        "is getting",
+                                                        "'s getting"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "[gap] (Lucy / always / take) photos on holiday?",
+                                        "answers": [
+                                                [
+                                                        "Does Lucy always take"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "I [gap] (try) to work. Stop making such noise!",
+                                        "answers": [
+                                                [
+                                                        "am trying",
+                                                        "'m trying"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "We [gap] (never / be) to this palace before.",
+                                        "answers": [
+                                                [
+                                                        "have never been",
+                                                        "'ve never been"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Thomas [gap] (not / speak) Italian although his close friend is Italian.",
+                                        "answers": [
+                                                [
+                                                        "doesn't speak",
+                                                        "does not speak"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "How often [gap] (you / go out) with your friends?",
+                                        "answers": [
+                                                [
+                                                        "do you go out"
+                                                ]
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "title": "2. Wybierz poprawną formę",
+                        "instructions": "Kliknij poprawną formę czasownika.",
+                        "layout": "list",
+                        "columns": [],
+                        "wordBox": [],
+                        "letters": false,
+                        "items": [
+                                {
+                                        "text": "I've heard that Brian [gap] his wrist.",
+                                        "answers": [
+                                                "has dislocated"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "is dislocating",
+                                                        "has dislocated"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "My sister [gap] me.",
+                                        "answers": [
+                                                "has just called"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "just calls",
+                                                        "has just called"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "How long [gap] your best friend?",
+                                        "answers": [
+                                                "have you known"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "do you know",
+                                                        "have you known"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "We [gap] on the balcony now.",
+                                        "answers": [
+                                                "are sitting"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "sit",
+                                                        "are sitting"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "I [gap] for Rome next Monday.",
+                                        "answers": [
+                                                "am leaving"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "leave",
+                                                        "am leaving"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "We [gap] supper right now. Would you like to join us?",
+                                        "answers": [
+                                                "are having"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "are having",
+                                                        "have had"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "[gap] TV in the evening?",
+                                        "answers": [
+                                                "Does Matthew always watch"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "Does Matthew always watch",
+                                                        "Is Matthew always watching"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "[gap] your dog for a walk yet?",
+                                        "answers": [
+                                                "Have you taken"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "Do you take",
+                                                        "Have you taken"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Look! It's Miranda! Why [gap] so fast?",
+                                        "answers": [
+                                                "is she running"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "does she run",
+                                                        "is she running"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "They [gap] for dinner yet.",
+                                        "answers": [
+                                                "haven't paid"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "aren't paying",
+                                                        "haven't paid"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Their children [gap] hot cocoa in the morning.",
+                                        "answers": [
+                                                "always drink"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "always drink",
+                                                        "are always drinking"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "David [gap] his homework on time.",
+                                        "answers": [
+                                                "sometimes finishes"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "sometimes finishes",
+                                                        "has sometimes finished"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "How often [gap] to the doctor?",
+                                        "answers": [
+                                                "does he go"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "does he go",
+                                                        "has he gone"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Students [gap] their exams and they are happy about it.",
+                                        "answers": [
+                                                "have just passed"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "are just passing",
+                                                        "have just passed"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "How long [gap] your cat?",
+                                        "answers": [
+                                                "have you had"
+                                        ],
+                                        "choices": [
+                                                [
+                                                        "do you have",
+                                                        "have you had"
+                                                ]
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "title": "3. Uzupełnij zdania",
+                        "instructions": "Wpisz czasownik z nawiasu w poprawnej formie. Użyj Present Simple, Present Continuous albo Present Perfect.",
+                        "layout": "list",
+                        "columns": [],
+                        "wordBox": [],
+                        "letters": false,
+                        "items": [
+                                {
+                                        "text": "I [gap] (make) some sandwiches with chicken and beef. Help yourself if you're hungry.",
+                                        "answers": [
+                                                [
+                                                        "have made",
+                                                        "'ve made"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Look! Lucy [gap] (buy) some fruit and vegetables.",
+                                        "answers": [
+                                                [
+                                                        "is buying"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "[gap] (you / often / call) your mum?",
+                                        "answers": [
+                                                [
+                                                        "Do you often call"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "The sun [gap] (not / shine). It's quite cloudy and dark.",
+                                        "answers": [
+                                                [
+                                                        "isn't shining",
+                                                        "is not shining"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Betty [gap] (put on) weight since last summer.",
+                                        "answers": [
+                                                [
+                                                        "has put on"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "How much money [gap] (she / save) every month?",
+                                        "answers": [
+                                                [
+                                                        "does she save"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Claire often [gap] (listen) to the radio in the morning.",
+                                        "answers": [
+                                                [
+                                                        "listens"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "I feel relieved because my noisy neighbours [gap] (just / move out).",
+                                        "answers": [
+                                                [
+                                                        "have just moved out"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Linda [gap] (never / do) her homework on Friday.",
+                                        "answers": [
+                                                [
+                                                        "never does"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "It [gap] (already / stop) raining so we can go for a long walk.",
+                                        "answers": [
+                                                [
+                                                        "has already stopped",
+                                                        "'s already stopped"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Rita and Olivia [gap] (see) their grandparents once a month.",
+                                        "answers": [
+                                                [
+                                                        "see"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Mary [gap] (work) for our company for twenty years.",
+                                        "answers": [
+                                                [
+                                                        "has worked",
+                                                        "has been working"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Hurry up! Everybody [gap] (wait) for you.",
+                                        "answers": [
+                                                [
+                                                        "is waiting"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Our lesson [gap] (just / finish). You can go home and chill out.",
+                                        "answers": [
+                                                [
+                                                        "has just finished"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "I'm sorry but I [gap] (not / vacuum) the carpet yet.",
+                                        "answers": [
+                                                [
+                                                        "haven't vacuumed",
+                                                        "have not vacuumed"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "How much time [gap] (it / take) you to go to the swimming pool?",
+                                        "answers": [
+                                                [
+                                                        "does it take"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Cindy [gap] (wear) a glamorous dress today.",
+                                        "answers": [
+                                                [
+                                                        "is wearing"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Our children are quite busy now. Suzy [gap] (brush) her teeth while Peter [gap] (clean) his shoes.",
+                                        "answers": [
+                                                [
+                                                        "is brushing"
+                                                ],
+                                                [
+                                                        "is cleaning"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Molly [gap] (always / want) to go to Mexico.",
+                                        "answers": [
+                                                [
+                                                        "has always wanted"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Lisa and John [gap] (go) to the museum tomorrow.",
+                                        "answers": [
+                                                [
+                                                        "are going"
+                                                ]
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "title": "4. Pytania: wpisz jedno słowo",
+                        "instructions": "Wpisz jedno słowo w każdą lukę. Przykład: X: How old is John? Y: Seventeen.",
+                        "layout": "list",
+                        "columns": [],
+                        "wordBox": [],
+                        "letters": false,
+                        "items": [
+                                {
+                                        "text": "X: What [gap] Dorothy do? Y: She's a doctor.",
+                                        "answers": [
+                                                [
+                                                        "does"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "X: [gap] I late? Y: No, you're early!",
+                                        "answers": [
+                                                [
+                                                        "Am"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "X: Who [gap] helping you? Y: Dad.",
+                                        "answers": [
+                                                [
+                                                        "is"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "X: [gap] has happened? Y: There's been an accident.",
+                                        "answers": [
+                                                [
+                                                        "What"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "X: When [gap] you meeting Jonathan? Y: At seven o'clock.",
+                                        "answers": [
+                                                [
+                                                        "are"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "X: What is Emily listening [gap]? Y: The radio.",
+                                        "answers": [
+                                                [
+                                                        "to"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "X: [gap] you ever been to London? Y: Yes. We went there last summer.",
+                                        "answers": [
+                                                [
+                                                        "Have"
+                                                ]
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "title": "5. Pytania o podmiot i o dopełnienie",
+                        "instructions": "Do każdego zdania ułóż dwa pytania: (a) o podmiot, czyli kto lub co wykonuje czynność, i (b) o dopełnienie, czyli kogo, co albo gdzie. Przykład: The little boy is reading a book. (a) Who is reading a book? (b) What is the little boy reading?",
+                        "layout": "table",
+                        "columns": [
+                                "Zdanie",
+                                "(a) o podmiot",
+                                "(b) o dopełnienie"
+                        ],
+                        "wordBox": [],
+                        "letters": false,
+                        "items": [
+                                {
+                                        "text": "Jason has read the newspaper. | [gap] | [gap]",
+                                        "answers": [
+                                                [
+                                                        "Who has read the newspaper",
+                                                        "Who has read the newspaper.",
+                                                        "Who has read the newspaper?",
+                                                        "Who has read the newspaper!",
+                                                        "Who's read the newspaper",
+                                                        "Who's read the newspaper.",
+                                                        "Who's read the newspaper?",
+                                                        "Who's read the newspaper!"
+                                                ],
+                                                [
+                                                        "What has Jason read",
+                                                        "What has Jason read.",
+                                                        "What has Jason read?",
+                                                        "What has Jason read!"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "My sister loves animals. | [gap] | [gap]",
+                                        "answers": [
+                                                [
+                                                        "Who loves animals",
+                                                        "Who loves animals.",
+                                                        "Who loves animals?",
+                                                        "Who loves animals!"
+                                                ],
+                                                [
+                                                        "What does your sister love",
+                                                        "What does your sister love.",
+                                                        "What does your sister love?",
+                                                        "What does your sister love!",
+                                                        "What does my sister love",
+                                                        "What does my sister love.",
+                                                        "What does my sister love?",
+                                                        "What does my sister love!"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Yvonne lives here. | [gap] | [gap]",
+                                        "answers": [
+                                                [
+                                                        "Who lives here",
+                                                        "Who lives here.",
+                                                        "Who lives here?",
+                                                        "Who lives here!"
+                                                ],
+                                                [
+                                                        "Where does Yvonne live",
+                                                        "Where does Yvonne live.",
+                                                        "Where does Yvonne live?",
+                                                        "Where does Yvonne live!"
+                                                ]
+                                        ]
+                                },
+                                {
+                                        "text": "Mr Thorn is painting the room. | [gap] | [gap]",
+                                        "answers": [
+                                                [
+                                                        "Who is painting the room",
+                                                        "Who is painting the room.",
+                                                        "Who is painting the room?",
+                                                        "Who is painting the room!",
+                                                        "Who's painting the room",
+                                                        "Who's painting the room.",
+                                                        "Who's painting the room?",
+                                                        "Who's painting the room!"
+                                                ],
+                                                [
+                                                        "What is Mr Thorn painting",
+                                                        "What is Mr Thorn painting.",
+                                                        "What is Mr Thorn painting?",
+                                                        "What is Mr Thorn painting!",
+                                                        "What's Mr Thorn painting",
+                                                        "What's Mr Thorn painting.",
+                                                        "What's Mr Thorn painting?",
+                                                        "What's Mr Thorn painting!"
+                                                ]
+                                        ]
+                                }
+                        ]
+                }
+        ],
         "distractors": [
                 {
                         "word": "honest",
@@ -3066,24 +4155,39 @@ video {
                         "pos": "n"
                 },
                 {
-                        "word": "give away",
-                        "translation": "zdradzić (sekret)",
-                        "pos": "v"
-                },
-                {
-                        "word": "briefly",
-                        "translation": "krótko",
-                        "pos": "adv"
-                },
-                {
-                        "word": "occasionally",
-                        "translation": "od czasu do czasu",
-                        "pos": "adv"
-                },
-                {
                         "word": "immediately",
                         "translation": "natychmiast",
                         "pos": "adv"
+                },
+                {
+                        "word": "carefully",
+                        "translation": "ostrożnie",
+                        "pos": "adv"
+                },
+                {
+                        "word": "loudly",
+                        "translation": "głośno",
+                        "pos": "adv"
+                },
+                {
+                        "word": "complain",
+                        "translation": "narzekać",
+                        "pos": "v"
+                },
+                {
+                        "word": "borrow",
+                        "translation": "pożyczać (od kogoś)",
+                        "pos": "v"
+                },
+                {
+                        "word": "apologise",
+                        "translation": "przepraszać",
+                        "pos": "v"
+                },
+                {
+                        "word": "invite",
+                        "translation": "zapraszać",
+                        "pos": "v"
                 },
                 {
                         "word": "Where does she live?",
@@ -3259,6 +4363,36 @@ video {
                         "lessons": [
                                 "Lekcja 2"
                         ]
+                },
+                {
+                        "word": "seldom",
+                        "lessons": [
+                                "Lekcja 3"
+                        ]
+                },
+                {
+                        "word": "plant",
+                        "lessons": [
+                                "Lekcja 3"
+                        ]
+                },
+                {
+                        "word": "admire",
+                        "lessons": [
+                                "Lekcja 3"
+                        ]
+                },
+                {
+                        "word": "bring up",
+                        "lessons": [
+                                "Lekcja 3"
+                        ]
+                },
+                {
+                        "word": "appropriate",
+                        "lessons": [
+                                "Lekcja 3"
+                        ]
                 }
         ],
         "sentenceCount": 5,
@@ -3272,6 +4406,11 @@ video {
                         "lessonLabel": "Lekcja 2",
                         "dateLabel": "19.09.2026",
                         "text": "Zrób test na Present Perfect i Past Simple - link masz w zadaniu domowym. Poćwicz też czasowniki nieregularne, bo bez nich Present Perfect nie zadziała, i przejrzyj słownictwo z Focus 2 Unit 1 na Hubie."
+                },
+                {
+                        "lessonLabel": "Lekcja 3",
+                        "dateLabel": "26.09.2026",
+                        "text": "Przed sprawdzianem zrób wszystkie ćwiczenia w zakładce „Ćwiczenia”: czasy Present Simple, Present Continuous i Present Perfect oraz pytania o podmiot i o dopełnienie. Na końcu wyślij mi wyniki przez WhatsApp. I ćwicz czasowniki nieregularne regularnie, bez nich Present Perfect nie zadziała."
                 }
         ]
 };
@@ -5062,6 +6201,42 @@ video {
                 .map(function (l) { return { label: l.label, dateLabel: l.dateLabel, items: map[l.label] }; });
         }
 
+        // Notatka graficzna do zagadnienia (opcjonalne g.sections, od 2026-09-25):
+        // kolorowe karty z punktami i przykladami, tabela porownawcza, ramka-wskazowka.
+        // **tekst** w srodku = wyroznienie. Wpisy bez sections renderuja sie jak dotad.
+        function gramInline(s) {
+            return escapeHtml(s).replace(/\*\*(.+?)\*\*/g, '<strong class="hub-hl">$1</strong>');
+        }
+        function renderSections(list) {
+            if (!list || !list.length) return '';
+            return '<div class="hub-gsections">' + list.map(function (s) {
+                var tone = ' tone-' + (s.tone || 'blue');
+                var title = s.title ? '<p class="hub-gcard-title">' +
+                    (s.emoji ? '<span class="hub-gcard-emoji">' + escapeHtml(s.emoji) + '</span>' : '') +
+                    gramInline(s.title) + '</p>' : '';
+                if (s.type === 'tip') {
+                    return '<div class="hub-gtip' + tone + '">' +
+                        (s.emoji ? '<span class="hub-gtip-emoji">' + escapeHtml(s.emoji) + '</span>' : '') +
+                        '<div class="hub-gtip-body">' + (s.title ? '<p class="hub-gtip-title">' + gramInline(s.title) + '</p>' : '') +
+                        '<p class="hub-gtip-text">' + gramInline(s.text || '') + '</p></div></div>';
+                }
+                if (s.type === 'table') {
+                    return '<div class="hub-gcard' + tone + '">' + title +
+                        '<div class="hub-gtable-wrap"><table class="hub-gtable"><thead><tr>' +
+                        (s.head || []).map(function (h) { return '<th>' + gramInline(h) + '</th>'; }).join('') +
+                        '</tr></thead><tbody>' +
+                        (s.rows || []).map(function (r) {
+                            return '<tr>' + r.map(function (c) { return '<td>' + gramInline(c) + '</td>'; }).join('') + '</tr>';
+                        }).join('') + '</tbody></table></div></div>';
+                }
+                var points = (s.points && s.points.length) ? '<ul class="hub-gcard-points">' +
+                    s.points.map(function (p) { return '<li>' + gramInline(p) + '</li>'; }).join('') + '</ul>' : '';
+                var ex = (s.examples && s.examples.length) ? '<div class="hub-gcard-ex"><p class="hub-gcard-ex-label">Przykłady</p>' +
+                    s.examples.map(function (e) { return '<p class="hub-gcard-ex-line">' + gramInline(e) + '</p>'; }).join('') + '</div>' : '';
+                return '<div class="hub-gcard' + tone + '">' + title + points + ex + '</div>';
+            }).join('') + '</div>';
+        }
+
         function renderGrammar() {
             var box = el('hub-grammar-list');
             if (box) {
@@ -5100,6 +6275,7 @@ video {
                             return '<div class="hub-gram">' +
                                 topic + pair + items +
                                 (g.explanation ? '<p class="hub-gram-expl">' + escapeAndLinkify(g.explanation) + '</p>' : '') +
+                                renderSections(g.sections) +
                                 renderLinks(g.links) +
                                 '</div>';
                         }).join('');
@@ -5431,6 +6607,17 @@ video {
             return !!(ch && ch[gap] && ch[gap].length);
         }
         function exLetter(ex, i) { return ex.letters ? String.fromCharCode(65 + i) + ' ' : ''; }
+        // layout "table": text pozycji to komorki rozdzielone "|"; przy svg
+        // pierwsza kolumna jest obrazkiem, wiec komorki z lukami zaczynaja sie od 1.
+        function exCellOffset(ex) { return ex.items.some(function (it) { return it.svg; }) ? 1 : 0; }
+        function exGapColumn(ex, itIdx, gap) {
+            var cells = ex.items[itIdx].text.split('|'), seen = 0;
+            for (var c = 0; c < cells.length; c++) {
+                seen += cells[c].split('[gap]').length - 1;
+                if (gap < seen) return ex.columns[c + exCellOffset(ex)] || '';
+            }
+            return '';
+        }
         // Wynik jednego cwiczenia liczony z zapisanego stanu, nie z DOM - ten sam
         // rachunek dla ekranu i dla wiadomosci na WhatsApp.
         function exResult(exIdx) {
@@ -5444,7 +6631,12 @@ video {
                     if (String(val).trim()) filled++;
                     var good = String(val).trim() && exAccepted(a).some(function (x) { return exNorm(x) === exNorm(val); });
                     if (good) ok++;
-                    else wrong.push({ num: ex.layout === 'text' ? n : (itIdx + 1), val: String(val).trim() });
+                    else wrong.push({
+                        num: ex.layout === 'text' ? n
+                            : ex.layout === 'table' ? (itIdx + 1) + ', ' + exGapColumn(ex, itIdx, gap)
+                            : (itIdx + 1),
+                        val: String(val).trim()
+                    });
                 });
             });
             return { total: total, ok: ok, filled: filled, wrong: wrong };
@@ -5458,6 +6650,15 @@ video {
             }
             box.innerHTML = EXERCISES.map(function (ex, exIdx) {
                 var gapNo = 0;
+                // Szerokosc pola wg najdluzszej odpowiedzi w calym cwiczeniu (nie w luce),
+                // zeby dlugosc pola nie podpowiadala odpowiedzi. Stale 11 znakow ucinalo
+                // odpowiedzi typu "Does Adam sometimes watch".
+                var inputSize = 11;
+                ex.items.forEach(function (it) {
+                    it.answers.forEach(function (a) {
+                        inputSize = Math.max(inputSize, Math.min(34, String(exAccepted(a)[0]).length + 2));
+                    });
+                });
                 function gapHtml(it, itIdx, i) {
                     gapNo++;
                     var num = ex.layout === 'text' ? '<span class="hub-ex-gapnum">(' + gapNo + ')</span>' : '';
@@ -5468,7 +6669,7 @@ video {
                                     escapeHtml(exLetter(ex, oi) + opt) + '</button>';
                             }).join('') + '</span>';
                     }
-                    return num + '<input type="text" class="hub-ex-input" size="11" autocomplete="off" autocapitalize="off" spellcheck="false" data-ex="' + exIdx + '" data-it="' + itIdx + '" data-gap="' + i + '">';
+                    return num + '<input type="text" class="hub-ex-input" size="' + inputSize + '" autocomplete="off" autocapitalize="off" spellcheck="false" data-ex="' + exIdx + '" data-it="' + itIdx + '" data-gap="' + i + '">';
                 }
                 function itemHtml(it, itIdx) {
                     var parts = it.text.split('[gap]');
@@ -5479,6 +6680,25 @@ video {
                 var body;
                 if (ex.layout === 'text') {
                     body = '<p class="hub-ex-text">' + ex.items.map(itemHtml).join(' ') + '</p>';
+                } else if (ex.layout === 'table') {
+                    var withSvg = exCellOffset(ex) === 1;
+                    body = '<div class="hub-ex-table-wrap"><table class="hub-ex-table"><thead><tr><th></th>' +
+                        ex.columns.map(function (c) { return '<th>' + escapeHtml(c) + '</th>'; }).join('') +
+                        '</tr></thead><tbody>' +
+                        ex.items.map(function (it, itIdx) {
+                            var gi = 0;
+                            var cells = it.text.split('|').map(function (cell) {
+                                var parts = cell.split('[gap]');
+                                return '<td>' + parts.map(function (p, i) {
+                                    return escapeHtml(p.trim()) + (i < parts.length - 1 ? gapHtml(it, itIdx, gi++) : '');
+                                }).join('') + '</td>';
+                            }).join('');
+                            // svg pochodzi z hub_input.json i przeszedl walidacje buildera.
+                            return '<tr><td class="hub-ex-num">' + (itIdx + 1) + '.</td>' +
+                                (withSvg ? '<td class="hub-ex-img" aria-hidden="true">' + it.svg + '</td>' : '') +
+                                cells + '</tr>';
+                        }).join('') +
+                        '</tbody></table></div>';
                 } else {
                     body = ex.items.map(function (it, itIdx) {
                         return '<div class="hub-ex-item"><span class="hub-ex-num">' + (itIdx + 1) + '.</span>' + itemHtml(it, itIdx) + '</div>';
@@ -5679,6 +6899,21 @@ video {
         function wireExShare() {
             if (exShareWired) return;
             exShareWired = true;
+            var nativeBtn = el('hub-ex-share-native');
+            if (nativeBtn && typeof navigator.share === 'function') {
+                nativeBtn.classList.remove('hidden');
+                nativeBtn.addEventListener('click', function () {
+                    nativeBtn.blur();
+                    if (!exStartedCount()) { setExStatus('Zrób przynajmniej jedno ćwiczenie, żeby było co wysłać.', true); return; }
+                    try {
+                        navigator.share({ text: buildExShareText() }).catch(function () {
+                            setExStatus('Udostępnianie anulowane - spróbuj WhatsApp albo Kopiuj wyniki.', false);
+                        });
+                    } catch (e) {
+                        setExStatus('Udostępnianie niedostępne - użyj WhatsApp albo Kopiuj wyniki.', false);
+                    }
+                });
+            }
             var copyBtn = el('hub-ex-share-copy');
             if (!copyBtn) return;
             copyBtn.addEventListener('click', function () {
